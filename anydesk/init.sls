@@ -5,10 +5,10 @@ install_anydesk:
   chocolatey.installed:
     - name: anydesk
     - version: '{{ config.version }}'
-    {%- if config.source %}
+    {%- if config.source | default('') %}
     - source: '{{ config.source }}'
     {%- endif %}
-    {%- if config.force %}
+    {%- if config.force | default(false) %}
     - force: True
     {%- endif %}
 
@@ -21,7 +21,7 @@ install_anydesk:
     - file: 'C:\Program Files (x86)\AnyDesk.exe'
 
 
-{%- if config.password %}
+{%- if config.password | default('') %}
 anydesk_client_set_password:
   cmd.run:
   - shell: powershell
@@ -29,7 +29,7 @@ anydesk_client_set_password:
 {%- endif %}
 
 
-{%- if config.license %}
+{%- if config.license | default('') %}
 anydesk_client_set_license:
   cmd.run:
   - shell: powershell
