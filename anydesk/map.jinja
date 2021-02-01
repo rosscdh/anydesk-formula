@@ -1,0 +1,2 @@
+{% import_yaml 'anydesk/config/defaults.yaml' as preconfig %}
+{% set config = salt.pillar.get( 'anydesk', default=preconfig.anydesk, merge=True ) %}

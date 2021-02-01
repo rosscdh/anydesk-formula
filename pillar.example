@@ -1,0 +1,6 @@
+anydesk:
+  version: '6.1.5.0'
+  force: False
+  password: mypassword123
+  #license: ANYDESKLICENSE1234
+  #source: your-repo.com

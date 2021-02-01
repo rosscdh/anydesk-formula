@@ -1,0 +1,7 @@
+name: anydesk
+os: CentOS
+os_family: RedHat
+version: 0.0.1
+release: 1
+description: Anydesk installer formula
+top_level_dir:  anydesk
