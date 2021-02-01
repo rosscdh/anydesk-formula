@@ -26,6 +26,8 @@ anydesk_client_set_password:
   cmd.run:
   - shell: powershell
   - name: 'echo "{{ config.password }}" | AnyDesk.exe --set-password'
+  - require:
+    - file: 'C:\Program Files (x86)\AnyDesk.exe'
 {%- endif %}
 
 
@@ -34,6 +36,8 @@ anydesk_client_set_license:
   cmd.run:
   - shell: powershell
   - name: 'echo "{{ config.license }}" | AnyDesk.exe --register-license'
+  - require:
+    - file: 'C:\Program Files (x86)\AnyDesk.exe'
 {%- endif %}
 
 
@@ -41,9 +45,12 @@ anydesk_client_status:
   cmd.run:
   - shell: powershell
   - name: 'AnyDesk.exe --get-status'
-
+  - require:
+    - file: 'C:\Program Files (x86)\AnyDesk.exe'
 
 anydesk_client_id:
   cmd.run:
   - shell: powershell
   - name: 'AnyDesk.exe --get-id'
+  - require:
+    - file: 'C:\Program Files (x86)\AnyDesk.exe'
