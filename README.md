@@ -12,9 +12,13 @@ Anydesk installer formula
 
 base state
 
-# ***anydesk.wtf***
+# ***anydesk.install***
 
-registers minion to saltstack and removes all other repos
+Installs the specified version
+
+# ***anydesk.info***
+
+Shows the info for anydesk status and client id
 
 # Testing
 using the test suite
