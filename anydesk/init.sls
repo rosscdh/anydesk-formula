@@ -8,7 +8,7 @@ install_anydesk:
     {%- if config.source %}
     - source: '{{ config.source }}'
     {%- endif %}
-    {%- if config.force is True %}
+    {%- if config.force %}
     - force: True
     {%- endif %}
 
