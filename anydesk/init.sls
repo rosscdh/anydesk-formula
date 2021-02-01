@@ -14,11 +14,11 @@ install_anydesk:
 
 
 # any desk needs to actually be installed; the above gets teh installer which is then used to install this
-'AnyDesk.exe --install "C:\Program Files (x86)\AnyDesk.exe" --start-with-win --silent --create-shortcuts --create-desktop-icon':
+'AnyDesk.exe --install "C:\Program Files (x86)\AnyDesk" --start-with-win --silent --create-shortcuts --create-desktop-icon':
   cmd.run:
   - shell: powershell
   - require:
-    - file: 'C:\Program Files (x86)\AnyDesk.exe'
+    - file: 'C:\Program Files (x86)\AnyDesk\AnyDesk.exe'
 
 
 {%- if config.password | default('') %}
@@ -27,7 +27,7 @@ anydesk_client_set_password:
   - shell: powershell
   - name: 'echo "{{ config.password }}" | AnyDesk.exe --set-password'
   - require:
-    - file: 'C:\Program Files (x86)\AnyDesk.exe'
+    - file: 'C:\Program Files (x86)\AnyDesk\AnyDesk.exe'
 {%- endif %}
 
 
@@ -37,7 +37,7 @@ anydesk_client_set_license:
   - shell: powershell
   - name: 'echo "{{ config.license }}" | AnyDesk.exe --register-license'
   - require:
-    - file: 'C:\Program Files (x86)\AnyDesk.exe'
+    - file: 'C:\Program Files (x86)\AnyDesk\AnyDesk.exe'
 {%- endif %}
 
 
@@ -46,11 +46,11 @@ anydesk_client_status:
   - shell: powershell
   - name: 'AnyDesk.exe --get-status'
   - require:
-    - file: 'C:\Program Files (x86)\AnyDesk.exe'
+    - file: 'C:\Program Files (x86)\AnyDesk\AnyDesk.exe'
 
 anydesk_client_id:
   cmd.run:
   - shell: powershell
   - name: 'AnyDesk.exe --get-id'
   - require:
-    - file: 'C:\Program Files (x86)\AnyDesk.exe'
+    - file: 'C:\Program Files (x86)\AnyDesk\AnyDesk.exe'
