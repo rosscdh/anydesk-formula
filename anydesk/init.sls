@@ -4,6 +4,7 @@
 {%- if kernel ==  'windows' %}
 include:
 - .install
+- .config
 - .run
 - .info
 {%- endif %}
