@@ -4,7 +4,7 @@
 anydesk_client_set_password:
   cmd.run:
   - shell: powershell
-  - name: 'echo "{{ config.password }}" | AnyDesk.exe --set-password'
+  - name: 'echo {{ config.password }} | AnyDesk.exe --set-password'
 {%- endif %}
 
 
@@ -12,6 +12,6 @@ anydesk_client_set_password:
 anydesk_client_set_license:
   cmd.run:
   - shell: powershell
-  - name: 'echo "{{ config.license }}" | AnyDesk.exe --register-license'
+  - name: 'echo {{ config.license }} | AnyDesk.exe --register-license'
 {%- endif %}
 
