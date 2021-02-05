@@ -1,3 +1,5 @@
+{% from 'anydesk/map.jinja' import config with context %}
+
 {%- if config.password | default('') %}
 anydesk_client_set_password:
   cmd.run:
