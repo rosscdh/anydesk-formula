@@ -17,20 +17,3 @@ install_anydesk:
 'AnyDesk.exe --install "C:\Program Files (x86)\AnyDesk" --start-with-win --silent --create-shortcuts --create-desktop-icon':
   cmd.run:
   - shell: powershell
-
-
-{%- if config.password | default('') %}
-anydesk_client_set_password:
-  cmd.run:
-  - shell: powershell
-  - name: 'echo "{{ config.password }}" | AnyDesk.exe --set-password'
-{%- endif %}
-
-
-{%- if config.license | default('') %}
-anydesk_client_set_license:
-  cmd.run:
-  - shell: powershell
-  - name: 'echo "{{ config.license }}" | AnyDesk.exe --register-license'
-{%- endif %}
-
