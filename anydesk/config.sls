@@ -37,7 +37,7 @@ setup_anydesk_config_settings_interactive_access:
       - key_ignore_case: True
       - append_if_not_found: True
 
-setup_anydesk_config_settings_interactive_access:
+setup_anydesk_config_settings_unattended:
     file.keyvalue:
       - name: "C:/ProgramData/AnyDesk/system.conf"
       - key: 'ad.features.unattended'
