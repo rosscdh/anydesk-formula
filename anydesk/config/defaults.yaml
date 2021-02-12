@@ -4,3 +4,8 @@ anydesk:
   password: mypassword123
   #license: ANYDESKLICENSE1234
   #source: your-repo.com
+  settings:
+    security:
+      interactive_access: '0'
+    features:
+      unattended: 'true'
