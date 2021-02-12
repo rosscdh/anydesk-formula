@@ -6,7 +6,6 @@ anydesk:
   #source: your-repo.com
   settings:
     security:
-      # 0=No,1=Yes,2=
       interactive_access: '1'
     features:
       unattended: 'true'
